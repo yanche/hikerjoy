@@ -1,0 +1,84 @@
+﻿- if(!isMobile)
+	nav.navbar.navbar-default.row
+		div.navbar-header
+			button.navbar-toggle(data-toggle='collapse' data-target='#portalNavBar')
+				span.sr-only
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='/') hikerJoy
+		div#portalNavBar.collapse.navbar-collapse
+			ul.nav.navbar-nav
+				li.active.dropdown
+					a.dropdown-toggle(href='#' data-toggle='dropdown')
+						span#home_nav_dropdowntitle
+						span.caret
+					ul.dropdown-menu
+						li#home_nav_routeplans
+							a(href='/#{org}/home/routePlans') 活动线路
+						li#home_nav_orgintro
+							a(href='/#{org}/home/orgintro') 组织介绍
+						li#home_nav_history
+							a(href='/#{org}/home/history') 历史活动
+						li#home_nav_leadership
+							a.ctrl_authShow(href='/#{org}/home/leadership') 我的队伍
+						li#home_nav_manage
+							a.ctrl_adminShow(href='/#{org}/manage') 管理页
+				li
+					a(href='/#{org}/home/signUp') 活动报名！
+				li
+					a(href='/#{org}/forum/index') 话题
+				li
+					a.ctrl_authShow(href='/#{org}/home/footPrint') 足迹
+			ul.nav.navbar-nav.navbar-right
+				li
+					include _messages
+				li
+					include _account
+				li
+					include _logout
+				li
+					include _login
+				li
+					include _register
+				li
+					include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_pc.js?timestamp=#{timestamp}')
+- else
+	div._mobile_nav_sidebar_left
+		ul.nav
+			li
+				a(href='/') hikerJoy
+			li#home_nav_routeplans_mobile
+				a(href='/#{org}/home/routePlans') 活动线路
+			li#home_nav_signup_mobile
+				a(href='/#{org}/home/signUp') 活动报名！
+			li#forum_nav_index_mobile
+				a(href='/#{org}/forum/index') 话题
+			li#home_nav_orgintro_mobile
+				a(href='/#{org}/home/orgintro') 组织介绍
+			li#home_nav_history_mobile
+				a(href='/#{org}/home/history') 历史活动
+			li#home_nav_footprint_mobile
+				a.ctrl_authShow(href='/#{org}/home/footPrint') 足迹
+			li#home_nav_leadership_mobile
+				a.ctrl_authShow(href='/#{org}/home/leadership') 我的队伍
+			li#home_nav_manage
+				a.ctrl_adminShow(href='/#{org}/manage') 管理页
+	div._mobile_nav_sidebar_right
+		ul.nav
+			li
+				include _messages
+			li
+				include _account
+			li
+				include _logout
+			li
+				include _login
+			li
+				include _register
+			li
+				include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_mobile.js?timestamp=#{timestamp}')

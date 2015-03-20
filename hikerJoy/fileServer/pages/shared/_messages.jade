@@ -1,0 +1,50 @@
+﻿a#a_message.ctrl_authShow(data-toggle='modal' data-target='#md_message')
+	i.fa.fa-envelope-o
+	span  消息
+
+div#md_message.modal.fade(tabindex='-1' role='dialog' aria-labelledby='md_messageTitle' aria-hidden='true')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h4#md_messageTitle.modal-title 消息 <i id="md_message_refresh" class="fa fa-refresh hoverYellowgreen pointerCursor"></i>
+			div.modal-body
+				div
+					ul#md_message_tab.nav.nav-tabs.tabs-left
+						li.active
+							a(href='#md_message_recvBox' data-toggle='tab')
+								span 收件箱
+								i#md_message_recvBox_unreadHint.fa.fa-comment-o.marginL2px(style='position:relative;bottom:3px;')
+						li
+							a(href='#md_message_sendBox' data-toggle='tab')
+								span 发件箱
+						li
+							a(href='#md_message_recvsysBox' data-toggle='tab')
+								span 系统消息
+								i#md_message_recvSysBox_unreadHint.fa.fa-comment-o.marginL2px(style='position:relative;bottom:3px;')
+						li
+							a#md_message_tabItem_sendMsg(href='#md_message_sendMsg' data-toggle='tab') 发信
+				div.tab-content
+					div#md_message_recvBox.tab-pane.active
+					div#md_message_sendBox.tab-pane
+					div#md_message_recvsysBox.tab-pane
+					div#md_message_sendMsg.tab-pane
+						div.form-group(style='margin-top:5px;')
+							input#md_message_sendMsg_to.form-control.clearData(type='text' placeholder='收信人昵称' validate='nickName')
+						table.fullWidth
+							tbody
+								tr
+									td
+										i#md_message_sendMsg_em.fa.fa-exclamation.pointerCursor(data-emphasis='false' style='margin-bottom:15px;')
+									td
+										div.form-group
+											input#md_message_sendMsg_subject.form-control.clearData(type='text' placeholder='标题' validate='valuedString')
+						div.form-group
+							textarea#md_message_sendMsg_body.form-control.clearData(style='height:150px;' placeholder='正文' validate='valuedString')
+						button#md_message_sendMsg_btnSend.btn.btn-success 发送信息
+			div.modal-footer.clr
+script(src='/content/javascript/pagejs/share/message/share_message_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/message/share_message_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/message/share_message_pc.js?timestamp=#{timestamp}')

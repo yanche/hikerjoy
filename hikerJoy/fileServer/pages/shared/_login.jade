@@ -1,0 +1,24 @@
+﻿a#a_login.ctrl_noAuthShow(data-toggle='modal' data-target='#md_login')
+	i.fa.fa-sign-in
+	span  登录
+
+div#md_login.modal.fade(tabindex='-1' role='dialog' aria-labelledby='md_loginTitle' aria-hidden='true')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h4#md_loginTitle.modal-title 登录
+			div.modal-body
+				div.form-group
+					input#md_login_UserEmail.form-control.clearData(validate='email' type='text' placeholder='登录邮箱' data-placement='left' data-container='body' data-toggle='tooltip' data-title='请改用注册时填写的邮箱登陆，密码不变。对于通过报名创建的临时用户，邮箱为报名时填写的邮箱地址。')
+				div.form-group
+					input#md_login_Password.form-control.clearData(validate='nonEmptyText' type='password' placeholder='密码')
+			div.modal-footer
+				div.form-group.pull-right
+					button#md_login_btnResetPWD.btn.btn-primary(style='margin: 10px;' data-stage='1') 重置密码
+					button#md_login_btnLogin.btn.btn-success 登录
+script(src='/content/javascript/pagejs/share/login/share_login_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/login/share_login_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/login/share_login_pc.js?timestamp=#{timestamp}')

@@ -1,0 +1,548 @@
+﻿nav > ul {
+    text-align: center;
+}
+
+    nav > ul > li {
+        display: inline-block;
+        padding: 0px 70px;
+    }
+
+div.footPrintList {
+    margin-bottom: 20px;
+}
+
+.ui-widget-header {
+    border: 0px;
+    background: none;
+    font-weight: bold;
+}
+
+div.input {
+    display: inline;
+}
+
+div.signUpForm {
+    width: 50%;
+    margin: auto;
+}
+
+.checkboxDiv > span {
+    width: auto;
+    height: 34px;
+}
+
+div.container {
+    margin-bottom: 100px;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.extWidth {
+    min-width: 100%;
+}
+
+table.table thead th {
+    text-align: center;
+}
+
+.disabledDefaultCursor[disabled] {
+    cursor: default !important;
+}
+
+input.candidateName {
+    width: 100px;
+}
+
+select.candidateGender {
+    width: 80px;
+}
+
+input.candidatePhone {
+    width: 150px;
+}
+
+input.candidateEmail {
+    width: 250px;
+}
+
+input.candidateLeadNums {
+    width: 50px;
+}
+
+input.candidateHoldNums {
+    width: 50px;
+}
+
+input.candidateBirthday {
+    width: 100px;
+}
+
+input.routeStartsOn, input.routeEndsOn, select.routeLeader, select.routeHolder {
+    width: 100px;
+}
+
+input.routePreCharge, input.routeCapacity {
+    width: 50px;
+}
+
+input.routeStrengthLevel, input.routeTechLevel {
+    width: 50px;
+}
+
+input.routePicUrl, input.routeLink {
+    width: 200px;
+}
+
+img.picture {
+    width: 280px;
+    height: 158px;
+    border: 1px solid black;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+th.itemIsEnabled {
+    width: 40px;
+}
+
+th.itemName, th.itemIsRent {
+    width: 120px;
+}
+
+th.itemPrice {
+    width: 80px;
+}
+
+th.thBtn {
+    width: 60px;
+}
+
+.verticalMiddle {
+    vertical-align: middle;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-size: 18px;
+}
+
+.signUpBtn {
+    margin-left: 20px;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.carouselWords {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+    .carouselWords a {
+        margin-bottom: 8px;
+        display: block;
+    }
+
+.hidden {
+    display: none;
+}
+
+/* from https://github.com/blueimp/jQuery-File-Upload */
+.fileinput-button {
+    position: relative;
+    overflow: hidden;
+}
+
+    .fileinput-button input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        font-size: 200px;
+        direction: ltr;
+        cursor: pointer;
+    }
+
+@media screen\9 {
+    .fileinput-button input {
+        filter: alpha(opacity=0);
+        font-size: 100%;
+        height: 100%;
+    }
+}
+
+.solidBorder {
+    border: 1px solid black;
+}
+
+.actReviewDiv {
+    display: inline-block;
+    margin: 20px;
+    padding: 0px;
+}
+
+    .actReviewDiv img {
+        display: block;
+    }
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+a.anchorNoneDeco {
+    text-decoration: none;
+}
+
+.overflowEllipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+span.displayViewDesc {
+    color: #777;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+iframe.recruitment {
+    border: none;
+}
+
+div.divRecruitmentPost img, div.divForumPostPrm img {
+    height: auto;
+    max-width: 100%;
+}
+
+.msgLineUnread {
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+}
+
+.postSec {
+    background-color: #EFEFEF;
+    border-radius: 5px;
+}
+
+.hoverRed:hover {
+    color: red;
+}
+
+.hoverYellowgreen:hover {
+    color: yellowgreen;
+}
+
+.hoverBgGreen:hover {
+    background-color: #5cb85c;
+}
+
+.signUpSheet_multiSelect {
+    padding: 7px;
+}
+
+.signUpSheetChk, .signUpTemplate {
+    border: dashed 1px black;
+    border-radius: 5px;
+    padding: 7px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sendMessageCandidate {
+    border: dashed 1px black;
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 7px;
+    margin-left: 7px;
+    margin-bottom: 7px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.activityLeader, .activityTag, .forum_index_newVoteOneOption {
+    border: dashed 1px black;
+    border-radius: 5px;
+    padding: 7px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.activityTagSelected {
+    background-color: #5cb85c;
+}
+
+.htmlPostView img {
+    max-width: 100%;
+}
+
+.htmlPostView ol, .htmlPostView ul {
+    max-width: 100%;
+}
+
+.htmlPostView {
+    word-wrap: break-word;
+}
+
+.ui-autocomplete {
+    z-index: 2147483647;
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 20px;
+}
+
+.mobile_1act_intro_container {
+    position: relative;
+    display: block;
+}
+
+.mobile_1act_intro_textContainer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 8px 8px 8px 8px;
+}
+
+.mobile_1act_intro_text {
+    font-weight: bold;
+    font-family: 'Microsoft Himalaya';
+    color: white;
+    font-size: 18px;
+}
+
+.mobile_2act_intro_container {
+    position: relative;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 8px 8px 8px 8px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    display: block;
+}
+
+.mobile_2act_intro_image {
+    display: inline-block;
+    width: 30%;
+    border-radius: 4px;
+}
+
+.mobile_2act_intro_text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    text-align: center;
+    padding-right: 5px;
+    color: #777;
+}
+
+.feedback_listLineItem {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #777;
+    cursor: pointer;
+}
+
+    .feedback_listLineItem:hover {
+        color: black;
+    }
+
+.feedback_list {
+    color: #777;
+    cursor: pointer;
+}
+
+    .feedback_list:hover {
+        color: black;
+    }
+
+.feedback_yearItem_mobile {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+tr.members_memberLine_active td {
+    background-color: #f4f2c0 !important;
+}
+
+.clickable {
+    cursor: pointer;
+    color: #888;
+}
+
+    .clickable:hover {
+        color: #333;
+    }
+
+a.clickable {
+    text-decoration: none;
+}
+
+.forumPostStatic {
+    color: #888;
+}
+
+.formPostPrmContainer {
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.formPostSecContainer {
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.forumPostPreviewArea {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    word-wrap: break-word;
+}
+
+.forumUnauthorizedUser {
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 7px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.forumPostIndexPostLine {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.forumPostIndexPostLineHead, .forumPostIndexPostLineBody {
+    margin-bottom: 5px;
+}
+
+.forumPostPrmContainer {
+    margin-bottom: 15px;
+}
+
+.forumPrmVote_label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.forumPrmVote_rate {
+    text-overflow: ellipsis;
+    overflow: visible;
+    white-space: nowrap;
+}
+
+.forumPostPrmBody {
+    word-wrap: break-word;
+}
+
+.dashedRadius5pxBorder {
+    border: dashed 1px black;
+    border-radius: 5px;
+}
+
+.mobile_nav_active {
+    background-color: beige;
+}
+
+._mobile_nav_sidebar_left, ._mobile_nav_sidebar_right {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 150px;
+    background-color: #f8f8f8;
+    z-index: 1059;
+}
+
+._mobile_nav_sidebar_left {
+    left: -150px;
+}
+
+._mobile_nav_sidebar_right {
+    right: -150px;
+}
+
+.doughnut-legend {
+  list-style: none;
+  position: relative;
+  right: 8px;
+  top: 0;
+}
+.doughnut-legend li {
+  display: block;
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  padding: 2px 8px 2px 28px;
+  font-size: 14px;
+  cursor: default;
+  -webkit-transition: background-color 200ms ease-in-out;
+  -moz-transition: background-color 200ms ease-in-out;
+  -o-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+.doughnut-legend li:hover {
+  background-color: #fafafa;
+}
+.doughnut-legend li span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.fa-2 {
+    font-size: 2em;
+}
+
+.fa-3 {
+    font-size: 4em;
+}
+
+.fa-4 {
+    font-size: 7em;
+}
+
+.fa-5 {
+    font-size: 12em;
+}
+
+.fa-6 {
+    font-size: 20em;
+}

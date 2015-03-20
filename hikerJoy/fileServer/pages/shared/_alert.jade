@@ -1,0 +1,13 @@
+﻿div#md_alert.modal.fade(tabindex='-1' role='dialog' aria-hidden='true' style='z-index:100000;')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h5.modal-title
+			div.modal-body
+				strong
+script(src='/content/javascript/pagejs/share/alert/share_alert_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/alert/share_alert_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/alert/share_alert_pc.js?timestamp=#{timestamp}')

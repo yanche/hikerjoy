@@ -1,0 +1,12 @@
+﻿extends ../shared/_homeLayout
+
+block vars
+	- var title = '足迹'
+
+block body
+	div#footprint_main.col-xs-12.col-md-8.col-md-offset-2
+	script(src='/content/javascript/pagejs/home/footprint/home_footprint_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/home/footprint/home_footprint_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/home/footprint/home_footprint_pc.js?timestamp=#{timestamp}')

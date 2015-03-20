@@ -1,0 +1,6 @@
+﻿
+mongodump -d hikerJoy -o C:\data\dump
+mongodump -d hikerJoy_log -o C:\data\dump
+
+mongorestore -d hikerJoy C:\data\dump\hikerJoy
+mongorestore -d hikerJoy_log C:\data\dump\hikerJoy_log

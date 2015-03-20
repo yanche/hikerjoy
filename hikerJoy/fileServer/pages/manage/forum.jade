@@ -1,0 +1,36 @@
+﻿extends ../shared/_manageLayout
+
+block vars
+	- var title = '讨论管理'
+
+block body
+	div.col-xs-12.col-sm-8.col-sm-offset-2.paddingLR0px
+		ul.nav.nav-tabs
+			li.active
+				a(href='#forum_auth' data-toggle='tab') 用户禁言
+			li
+				a(href='#forum_active' data-toggle='tab') 删帖
+		div.tab-content(style='padding-top:15px;')
+			div#forum_auth.tab-pane.active
+				div.col-xs-10
+					input#forum_auth_inputUnauthUser.form-control(placeholder='请输入希望禁言的用户的昵称或姓名' type='text')
+				div.col-xs-2
+					button#forum_auth_btnUnauthUser.btn.btn-warning 禁言
+				div#forum_auth_unauthUsersArea.col-xs-12(style='margin-top: 15px;')
+				script(src='/content/javascript/pagejs/manage/forum/auth/manage_forum_auth_common.js?timestamp=#{timestamp}')
+				- if(isMobile)
+					script(src='/content/javascript/pagejs/manage/forum/auth/manage_forum_auth_mobile.js?timestamp=#{timestamp}')
+				- else
+					script(src='/content/javascript/pagejs/manage/forum/auth/manage_forum_auth_pc.js?timestamp=#{timestamp}')
+			div#forum_active.tab-pane
+				span 抱歉，删帖恢复功能暂未实现
+				script(src='/content/javascript/pagejs/manage/forum/active/manage_forum_active_common.js?timestamp=#{timestamp}')
+				- if(isMobile)
+					script(src='/content/javascript/pagejs/manage/forum/active/manage_forum_active_mobile.js?timestamp=#{timestamp}')
+				- else
+					script(src='/content/javascript/pagejs/manage/forum/active/manage_forum_active_pc.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/manage/forum/manage_forum_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/manage/forum/manage_forum_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/manage/forum/manage_forum_pc.js?timestamp=#{timestamp}')

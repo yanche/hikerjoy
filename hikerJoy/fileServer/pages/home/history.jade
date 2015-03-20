@@ -1,0 +1,12 @@
+﻿extends ../shared/_homeLayout
+
+block vars
+	- var title = '历史活动'
+
+block body
+	div#history_main.row
+	script(src='/content/javascript/pagejs/home/history/home_history_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/home/history/home_history_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/home/history/home_history_pc.js?timestamp=#{timestamp}')

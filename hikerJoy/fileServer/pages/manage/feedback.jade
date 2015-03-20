@@ -1,0 +1,38 @@
+﻿extends ../shared/_manageLayout
+
+block vars
+	- var title = '线路账单'
+
+block body
+	div(style='margin-bottom: 15px;')
+		i#feedback_shareArea_shrink.fa.fa-minus.hoverRed.pointerCursor(style='margin-left:5px;')
+		div#feedback_shareArea
+			div#feedback_shareStatus
+			div#feedback_sharingOrg.padding5px
+			div#feedback_link_library(style='padding: 5px;')
+				a(href='/library') 户外资料库
+			ul(style='color:orange; margin-top:15px;')
+				li 分享活动总结/账目之后，其他社团（仅对社团开放，任何个人无法获取）将可以读取你的所有总结/账目，同时你也可以获得所有其他开放社团的总结/账目。
+				li 取消分享活动总结/账目之后，其他社团将无法读取你的所有总结/账目，同时你也只能查看自己的总结/账目。
+				li 总结/账目的分享/取消状态分别每隔30天可以修改一次。
+				li 基于互联网的分享精神，强烈建议社团对外开放，共享知识，共同建立健康的户外生态圈。
+				li 户外总结资料来之不易，请妥善保管不要对外泄露。
+	hr
+	div#feedback_main
+	div#md_shareConfirm.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+					h5.modal-title
+				div.modal-body
+					strong 请注意！在设置分享/取消之后的30天内将无法修改状态！确认请点击 “继续”。
+				div.modal-footer
+					button#feedback_shareConfirm_cancel.btn.btn-default.pull-right(data-dismiss='modal') 取消
+					button#feedback_shareConfirm_confirm.btn.btn-danger.pull-right(style='margin-right:15px;' data-dismiss='modal') 继续
+	script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_library.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/manage/feedback/manage_feedback_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/manage/feedback/manage_feedback_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/manage/feedback/manage_feedback_pc.js?timestamp=#{timestamp}')

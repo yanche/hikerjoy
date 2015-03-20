@@ -1,0 +1,13 @@
+﻿extends ../shared/_globalLayout
+
+block vars
+	- var title = 'hikerJoy'
+
+block body
+	div#global_index_orgList.row
+	link(rel='stylesheet' href='/content/css/pagecss/global_index.css?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/global/index/global_index_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/global/index/global_index_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/global/index/global_index_pc.js?timestamp=#{timestamp}')

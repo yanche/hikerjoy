@@ -1,0 +1,1 @@
+﻿$('#manage_nav_forum_mobile').addClass('mobile_nav_active');

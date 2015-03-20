@@ -1,0 +1,6 @@
+﻿div#siteBanner.row
+script(src='/content/javascript/pagejs/share/banner/share_banner_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/banner/share_banner_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/banner/share_banner_pc.js?timestamp=#{timestamp}')

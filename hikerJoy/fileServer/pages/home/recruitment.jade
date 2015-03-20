@@ -1,0 +1,14 @@
+﻿extends ../shared/_homeLayout
+
+block vars
+	- var title = '召集帖'
+
+block body
+	div#recruitment_helpPanel(style='margin-bottom: 15px;')
+	div#recruitment_recruitmentPost.htmlPostView
+
+	script(src='/content/javascript/pagejs/home/recruitment/home_recruitment_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/home/recruitment/home_recruitment_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/home/recruitment/home_recruitment_pc.js?timestamp=#{timestamp}')

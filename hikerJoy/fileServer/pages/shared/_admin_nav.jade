@@ -1,0 +1,59 @@
+﻿- if(!isMobile)
+	nav.navbar.navbar-default.row
+		div.navbar-header
+			button.navbar-toggle(data-toggle='collapse' data-target='#portalNavBar')
+				span.sr-only
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='/') hikerJoy
+		div#portalNavBar.collapse.navbar-collapse
+			ul.nav.navbar-nav
+				li
+					a.ctrl_authShow(href='/admin/orgs') 组织
+				li
+					a.ctrl_authShow(href='/admin/share') 分享
+				li
+					a.ctrl_authShow(href='/admin/tools') 工具
+			ul.nav.navbar-nav.navbar-right
+				li
+					include _messages
+				li
+					include _account
+				li
+					include _logout
+				li
+					include _login
+				li
+					include _register
+				li
+					include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_pc.js?timestamp=#{timestamp}')
+- else
+	div._mobile_nav_sidebar_left
+		ul.nav
+			li
+				a(href='/') hikerJoy
+			li#admin_nav_orgs_mobile
+				a.ctrl_authShow(href='/admin/orgs') 组织
+			li#admin_nav_share_mobile
+				a.ctrl_authShow(href='/admin/share') 分享
+			li#admin_nav_tools_mobile
+				a.ctrl_authShow(href='/admin/tools') 工具
+	div._mobile_nav_sidebar_right
+		ul.nav
+			li
+				include _messages
+			li
+				include _account
+			li
+				include _logout
+			li
+				include _login
+			li
+				include _register
+			li
+				include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_mobile.js?timestamp=#{timestamp}')

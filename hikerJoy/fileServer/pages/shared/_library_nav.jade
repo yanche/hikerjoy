@@ -1,0 +1,55 @@
+﻿- if(!isMobile)
+	nav.navbar.navbar-default.row
+		div.navbar-header
+			button.navbar-toggle(data-toggle='collapse' data-target='#portalNavBar')
+				span.sr-only
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='/') hikerJoy
+		div#portalNavBar.collapse.navbar-collapse
+			ul.nav.navbar-nav
+				li
+					a(href='/library/index') 资料库
+				li
+					a.ctrl_oneAdminShow(href='/library/summary') 活动总结
+			ul.nav.navbar-nav.navbar-right
+				li
+					include _messages
+				li
+					include _account
+				li
+					include _logout
+				li
+					include _login
+				li
+					include _register
+				li
+					include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_pc.js?timestamp=#{timestamp}')
+- else
+	div._mobile_nav_sidebar_left
+		ul.nav
+			li
+				a(href='/') hikerJoy
+			li#library_nav_index_mobile
+				a(href='/library/index') 资料库
+			li#library_nav_summary_mobile
+				a.ctrl_oneAdminShow(href='/library/summary') 活动总结
+	div._mobile_nav_sidebar_right
+		ul.nav
+			li
+				include _messages
+			li
+				include _account
+			li
+				include _logout
+			li
+				include _login
+			li
+				include _register
+			li
+				include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_mobile.js?timestamp=#{timestamp}')

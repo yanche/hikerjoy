@@ -1,0 +1,43 @@
+﻿a#a_register.ctrl_noAuthShow(data-toggle='modal' data-target='#md_register')
+	i.fa.fa-plus
+	span  注册
+
+div#md_register.modal.fade(tabindex='-1' role='dialog' aria-labelledby='md_registerTitle' aria-hidden='true')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h4#md_registerTitle.modal-title 注册
+			div.modal-body
+				div.form-group.input-group
+					input#md_register_email.form-control.clearData(validate='email' type='text' placeholder='登录邮箱')
+					span.input-group-addon
+						span#md_register_emailAvailableHint.fa(style='width:15px;')
+				div.form-group
+					input#md_register_pwd.form-control.clearData(validate='password' type='password' placeholder='请输入密码')
+				div.form-group
+					input#md_register_pwd2.form-control.clearData(validate='sameValue' data-validatetarget='#md_register_pwd' type='password' placeholder='请确认密码')
+				div.row
+					div.form-group.col-xs-6
+						input#md_register_name.form-control.clearData(validate='nameNullable' type='text' placeholder='姓名，选填')
+					div.form-group.col-xs-6
+						select#md_register_gender.form-control
+							option(value='男') 男
+							option(value='女') 女
+				div.form-group.input-group
+					input#md_register_nickName.form-control.clearData(validate='nickNameNullable' type='text' placeholder='昵称，选填')
+					span.input-group-addon
+						span#md_register_nickNameAvailableHint.fa(style='width:15px;')
+				div.form-group
+					input#md_register_contact.form-control.clearData(validate='emailNullable' type='text' placeholder='联系邮箱，用于接收活动报名通知等，建议与登录邮箱分开，选填')
+				div.form-group
+					input#md_register_phone.form-control.clearData(validate='phoneNullable' type='text' placeholder='手机，选填')
+			div.modal-footer
+				div.form-group.pull-right
+					button#md_register_btnRegister.btn.btn-success 注册
+
+script(src='/content/javascript/pagejs/share/register/share_register_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/register/share_register_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/register/share_register_pc.js?timestamp=#{timestamp}')

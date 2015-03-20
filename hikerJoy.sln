@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "hikerJoy", "hikerJoy\hikerJoy.njsproj", "{B1D83EE3-CA7B-4CD1-A5EE-333136845B18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1D83EE3-CA7B-4CD1-A5EE-333136845B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D83EE3-CA7B-4CD1-A5EE-333136845B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D83EE3-CA7B-4CD1-A5EE-333136845B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D83EE3-CA7B-4CD1-A5EE-333136845B18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

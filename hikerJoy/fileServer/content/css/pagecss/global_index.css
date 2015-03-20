@@ -1,0 +1,27 @@
+﻿#global_index_orgList a:nth-child(2n+1) {
+    clear: left;
+}
+
+@media (min-width: 992px) {
+    #global_index_orgList a:nth-child(2n+1) {
+        clear: none;
+    }
+
+    #global_index_orgList a:nth-child(3n+1) {
+        clear: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    #global_index_orgList a:nth-child(2n+1) {
+        clear: none;
+    }
+
+    #global_index_orgList a:nth-child(3n+1) {
+        clear: none;
+    }
+
+    #global_index_orgList a:nth-child(4n+1) {
+        clear: left;
+    }
+}

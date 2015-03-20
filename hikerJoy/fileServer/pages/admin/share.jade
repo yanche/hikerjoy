@@ -1,0 +1,22 @@
+﻿extends ../shared/_adminLayout
+
+block vars
+	- var title = '社团资料分享情况'
+
+block body
+	table.table.table-striped.table-hover(style='text-align:center;')
+		thead
+			tr
+				th 社团
+				th 分享总结
+				th 分享账单
+				th 总结提交
+				th 账单提交
+				th 状态
+		tbody#admin_share_orgstable
+	script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_library.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/admin/share/admin_share_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/admin/share/admin_share_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/admin/share/admin_share_pc.js?timestamp=#{timestamp}')

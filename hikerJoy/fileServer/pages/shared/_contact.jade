@@ -1,0 +1,17 @@
+﻿a#a_contact(data-toggle='modal' data-target='#md_contact')
+	i.fa.fa-bug
+	span  吐槽
+
+div#md_contact.modal.fade(tabindex='-1' role='dialog' aria-labelledby='md_contactTitle' aria-hidden='true')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h4#md_contactTitle.modal-title 联系
+			div.modal-body 关于站点，如有任何疑问、建议，请不吝赐教 yanche.belongs@gmail.com。^.^
+			div.modal-footer
+script(src='/content/javascript/pagejs/share/contact/share_contact_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/contact/share_contact_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/contact/share_contact_pc.js?timestamp=#{timestamp}')

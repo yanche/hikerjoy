@@ -1,0 +1,12 @@
+﻿extends ../shared/_homeLayout
+
+block vars
+	- var title = '组织介绍'
+
+block body
+	div#org_intro.htmlPostView
+	script(src='/content/javascript/pagejs/home/orgintro/home_orgintro_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/home/orgintro/home_orgintro_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/home/orgintro/home_orgintro_pc.js?timestamp=#{timestamp}')

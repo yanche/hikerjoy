@@ -1,0 +1,1 @@
+﻿$('#admin_nav_share_mobile').addClass('mobile_nav_active');

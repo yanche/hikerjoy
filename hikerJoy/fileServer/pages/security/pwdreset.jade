@@ -1,0 +1,11 @@
+﻿extends ../shared/_globalLayout
+
+block vars
+	- var title = '重置密码'
+
+block body
+	script(src='/content/javascript/pagejs/security/pwdreset/security_pwdreset_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/security/pwdreset/security_pwdreset_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/security/pwdreset/security_pwdreset_pc.js?timestamp=#{timestamp}')

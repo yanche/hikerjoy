@@ -1,0 +1,12 @@
+﻿extends ../shared/_globalLayout
+
+block vars
+	- var title = '当前活动'
+
+block body
+	div#global_activities_main.row
+	script(src='/content/javascript/pagejs/global/activities/global_activities_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/global/activities/global_activities_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/global/activities/global_activities_pc.js?timestamp=#{timestamp}')

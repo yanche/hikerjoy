@@ -1,0 +1,26 @@
+﻿
+var basicPartial = require('./forum/basic.js');
+exports.getOneForumPostFieldsBy = basicPartial.getOneForumPostFieldsBy;
+exports.getOneActiveForumPostFieldsBy = basicPartial.getOneActiveForumPostFieldsBy;
+exports.getForumPostsFieldsBy = basicPartial.getForumPostsFieldsBy;
+exports.getActiveForumPostsFieldsBy = basicPartial.getActiveForumPostsFieldsBy;
+exports.getOneForumPostPrmFieldsBy = basicPartial.getOneForumPostPrmFieldsBy;
+exports.getOneActiveForumPostPrmFieldsBy = basicPartial.getOneActiveForumPostPrmFieldsBy;
+exports.getForumPostPrmsFieldsBy = basicPartial.getForumPostPrmsFieldsBy;
+exports.getActiveForumPostPrmsFieldsBy = basicPartial.getActiveForumPostPrmsFieldsBy;
+exports.getOneForumPostSecFieldsBy = basicPartial.getOneForumPostSecFieldsBy;
+exports.getOneActiveForumPostSecFieldsBy = basicPartial.getOneActiveForumPostSecFieldsBy;
+exports.getForumPostSecsFieldsBy = basicPartial.getForumPostSecsFieldsBy;
+exports.getActiveForumPostSecsFieldsBy = basicPartial.getActiveForumPostSecsFieldsBy;
+exports.insertOneForumPostSec = basicPartial.insertOneForumPostSec;
+exports.updateForumPostSecs = basicPartial.updateForumPostSecs;
+exports.insertOneForumPostPrm = basicPartial.insertOneForumPostPrm;
+exports.updateForumPostPrms = basicPartial.updateForumPostPrms;
+exports.insertOneForumPost = basicPartial.insertOneForumPost;
+exports.updateForumPosts = basicPartial.updateForumPosts;
+exports.getActiveForumPostsCount = basicPartial.getActiveForumPostsCount;
+exports.getForumPostsCount = basicPartial.getForumPostsCount;
+exports.getActiveForumPostPrmsCount = basicPartial.getActiveForumPostPrmsCount;
+exports.getForumPostPrmsCount = basicPartial.getForumPostPrmsCount;
+exports.getActiveForumPostSecsCount = basicPartial.getActiveForumPostSecsCount;
+exports.getForumPostSecsCount = basicPartial.getForumPostSecsCount;

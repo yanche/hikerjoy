@@ -1,0 +1,54 @@
+﻿extends ../shared/_adminLayout
+
+block vars
+	- var title = '入驻组织'
+
+block body
+	div.row.col-xs-12.col-md-8.col-md-offset-2
+		ul.nav.nav-tabs
+			li.active
+				a(href='#orgs_active' data-toggle='tab') 运行中
+			li
+				a(href='#orgs_inactive' data-toggle='tab') 停止运行
+		div.tab-content(style='padding-top:15px')
+			div#orgs_active.tab-pane.active
+				button#orgs_addOrg.btn.btn-success 添加
+				table.table.table-striped.table-hover(style='text-align: center;')
+					thead
+						tr
+							th
+							th url
+							th 全称
+							th 短名
+					tbody#orgs_active_tbody
+			div#orgs_inactive.tab-pane
+				table.table.table-striped.table-hover(style='text-align: center;')
+					thead
+						tr
+							th
+							th url
+							th 全称
+							th 短名
+					tbody#orgs_inactive_tbody
+	div#md_admin_orgsEdit.modal.fade(tabindex='-1' role='dialog' aria-labelledby='md_admin_orgsEdit_title' aria-hidden='true')
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+					h4#md_admin_orgsEdit_title.modal-title 编辑组织
+				div.modal-body
+					div.form-group
+						input#md_admin_orgsEdit_alias.form-control.clearData(validate='valuedString' type='text' placeholder='URL-alias')
+					div.form-group
+						input#md_admin_orgsEdit_short.form-control.clearData(validate='valuedString' type='text' placeholder='短名')
+					div.form-group
+						input#md_admin_orgsEdit_full.form-control.clearData(validate='valuedString' type='text' placeholder='全称')
+				div.modal-footer
+					div.form-group.pull-right
+						button#md_admin_orgsEdit_cancel.btn.btn-primary(style='margin: 10px;' data-stage='1') 取消
+						button#md_admin_orgsEdit_submit.btn.btn-success 提交
+	script(src='/content/javascript/pagejs/admin/orgs/admin_orgs_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/admin/orgs/admin_orgs_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/admin/orgs/admin_orgs_pc.js?timestamp=#{timestamp}')

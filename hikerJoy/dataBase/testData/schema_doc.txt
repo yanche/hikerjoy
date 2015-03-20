@@ -1,0 +1,250 @@
+
+--email
+{
+'_id':
+'status':
+'from':
+'to':[]
+'cc':[]
+'bcc':[]
+'subject':
+'body':
+'insertedOn':
+}
+
+--log (other server)
+{
+'_id':
+'createdOn':
+'level':
+'desc':
+}
+
+-- passwordReset
+{
+'_id':
+'userId':
+'ticketId':
+'createdOn':
+'expiredOn':
+'claimedOn':
+}
+
+-- users
+{
+'_id':
+'statusId':
+'special': --tag: special user, god, observer
+'email': --unique
+'hash_pwd':
+'nickName':
+'createdOn':
+'lastLoginOn':
+'personalInfo':
+	{
+	'name':
+	'gender':
+	'phone':
+	'email':
+	}
+'lastForumPostOn':
+'lastForumPostPrmOn':
+'lastForumPostSecOn':
+}
+
+-- user messages
+{
+'_id':
+'subject':
+'body':
+'fromId': //0 from system
+'toId':
+'createdOn':
+'firstReadOn':
+'senderDeleteOn':
+'receiverDeleteOn':
+'emphasis':
+}
+
+-- organizations
+{
+'_id':
+'statusId':
+'alias':
+'fullName':
+'shortName':
+'typeCode':
+'bannerUrl':
+'logoUrl':
+'createdOn':
+'comments':
+'admins':[]
+'candidates':[]
+'templates':[ {'name':, 'items':[{'label':,'type':,'children':}]} ]
+'intro':
+'shortIntro':
+'weixinId': //example: gh_718ead8bf7e7
+'weixinDefault': {
+		'type': //text or news
+		'content': //for text
+		'news': [
+			{
+			'title': //for news
+			'desc': //for news
+			'picUrl': //for news
+			'url': //for news
+			}
+		]
+	}
+'weixinWelcome': {
+		'type': //text or news
+		'content': //for text
+		'news': [
+			{
+			'title': //for news
+			'desc': //for news
+			'picUrl': //for news
+			'url': //for news
+			}
+		]
+	}
+'weixinKeywords': {
+	'activities': //keyword to get opening activities
+	'intro': //keyword to get intro
+}
+'shareSummary': 0 or 1
+'shareBillStatement': 0 or 1
+'shareSummaryModifiedOn':
+'shareBillStatementModifiedOn':
+'noForumPostUserIdList':
+}
+
+-- weixin
+{
+'_id':
+'statusId':
+'orgId':
+'createdOn':
+'keywords': [ string of key word ]
+'type': //text or news
+'content': //for text
+'news': [
+	{
+	'title': //for news
+	'desc': //for news
+	'picUrl': //for news
+	'url': //for news
+	}
+]
+}
+
+-- activity
+{
+'_id':
+'orgId':
+'statusId':
+'name':
+'startsOn':
+'endsOn':
+'organizer':[] --array of user._id
+'intro':
+'createdOn':
+'picUrl':
+'sheet':[{'label':,'type':,'children':}]
+'recruitment':
+'recruitmentUpdatedOn':
+'billstatement': [ {'label':, 'cost':, 'comments': } ]
+'billstatementUpdatedOn':
+'summary': {
+		'contact': [ {'name':, 'role':, 'contact': } ],
+		'details':, //html post
+	}
+'summaryUpdatedOn':
+'tags': []
+}
+
+-- userAct
+{
+'_id':
+'userId':
+'actId':
+'orgId':
+'statusId':
+'signUpOn':
+'items':[{'label':,'type':,'value':}]
+}
+
+-- activityTags
+{
+'_id':
+'name':
+}
+
+
+-- sessions
+{
+'_id':
+'sessionId':
+'lastAccessOn':
+'user': {
+	'_id': //_id of user
+	'email': //login email
+	'special':
+	}
+'token': {
+	'key':
+	'value':
+	}
+}
+
+
+-- forumPost
+{
+'_id':
+'statusId':
+'title':
+'orgId':
+'actId':
+'createdOn':
+'createdByUserId':
+'label':
+'tags': []
+'lastModifiedOn':
+'lastModifiedByUserId':
+'emphasis':
+'preview':
+}
+
+
+-- forumPostPrm
+{
+'_id':
+'statusId':
+'postId':  //object id of forumPost
+'type': article or vote
+'content': []
+'vote': {
+		'desc':
+		'multi': true(checkbox) or false(radiobox)
+		'options': []
+		'votee': [ {'userObjId':, 'choice': string or array of string } ]
+		'closedOn':
+	}
+'createdOn':
+'createdByUserId':
+'lastModifiedOn':
+'lastModifiedByUserId':
+}
+
+
+-- forumPostSec
+{
+'_id':
+'statusId':
+'postPrmId':  //object id of forumPostPrm
+'content': //string
+'createdOn':
+'createdByUserId':
+'replyToUserId':
+}
+

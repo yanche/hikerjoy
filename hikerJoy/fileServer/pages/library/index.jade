@@ -1,0 +1,16 @@
+﻿extends ../shared/_libraryLayout
+
+block vars
+	- var title = '户外资料库'
+
+block body
+	div.row
+		div.col-sm-6.col-sm-offset-3(style='margin-bottom:15px;')
+			input#library_index_tagSearch.form-control(type='text')
+		div#library_index_tagsArea.col-xs-12.col-sm-10.col-sm-offset-1
+		div#library_index_forumPostArea.col-xs-12.col-sm-10.col-sm-offset-1
+	script(src='/content/javascript/pagejs/library/index/library_index_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/library/index/library_index_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/library/index/library_index_pc.js?timestamp=#{timestamp}')

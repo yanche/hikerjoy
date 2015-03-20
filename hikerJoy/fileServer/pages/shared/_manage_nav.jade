@@ -1,0 +1,63 @@
+﻿- if(!isMobile)
+	nav.navbar.navbar-default.row
+		div.navbar-header
+			button.navbar-toggle(data-toggle='collapse' data-target='#portalNavBar')
+				span.sr-only
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a#a_manage_gohome.navbar-brand.ctrl_adminShow(href='/#{org}')
+		div#portalNavBar.collapse.navbar-collapse
+			ul.nav.navbar-nav
+				li
+					a.ctrl_adminShow(href='/#{org}/manage/routePlans') 线路
+				li
+					a.ctrl_adminShow(href='/#{org}/manage/org') 组织
+				li
+					a.ctrl_adminShow(href='/#{org}/manage/feedback') 档案
+				li
+					a.ctrl_adminShow(href='/#{org}/manage/weixin') 微信
+				li
+					a.ctrl_adminShow(href='/#{org}/manage/forum') 话题
+			ul.nav.navbar-nav.navbar-right
+				li
+					include _messages
+				li
+					include _account
+				li
+					include _logout
+				li
+					include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_pc.js?timestamp=#{timestamp}')
+- else
+	div._mobile_nav_sidebar_left
+		ul.nav
+			li
+				a#a_manage_gohome_mobile.ctrl_adminShow(href='/#{org}')
+			li#manage_nav_routeplans_mobile
+				a.ctrl_adminShow(href='/#{org}/manage/routePlans') 线路
+			li#manage_nav_org_mobile
+				a.ctrl_adminShow(href='/#{org}/manage/org') 组织
+			li#manage_nav_feedback_mobile
+				a.ctrl_adminShow(href='/#{org}/manage/feedback') 档案
+			li#manage_nav_weixin_mobile
+				a.ctrl_adminShow(href='/#{org}/manage/weixin') 微信
+			li#manage_nav_forum_mobile
+				a.ctrl_adminShow(href='/#{org}/manage/forum') 话题
+	div._mobile_nav_sidebar_right
+		ul.nav
+			li
+				include _messages
+			li
+				include _account
+			li
+				include _logout
+			li
+				include _login
+			li
+				include _register
+			li
+				include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_mobile.js?timestamp=#{timestamp}')

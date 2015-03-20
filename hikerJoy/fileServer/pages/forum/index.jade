@@ -1,0 +1,48 @@
+﻿
+div#forum_index_main
+	div#forum_index_createNewPost
+		button#forum_index_btnCreateNewPost.forum_index_newPostHide.btn.btn-success(style='margin:5px;') 发帖
+		button#forum_index_btnSubmitNewPost.forum_index_newPostShow.btn.btn-primary(style='margin:5px;') 提交
+		button#forum_index_btnCancelNewPost.forum_index_newPostShow.btn.btn-danger(style='margin:5px;') 取消
+		span.forum_index_newPostHide(style='margin-left: 5px;')
+			i#forum_index_goemphasis_icon.fa.fa-star(style='color:yellowgreen')
+			a#forum_index_goemphasis.clickable(style='margin-left: 3px;') 精华区
+		span.forum_index_newPostHide(style='margin-left: 5px;')
+			i.fa.fa-file-image-o
+			a#forum_index_gorecruitment.clickable(style='margin-left: 3px;') 活动信息
+		span.forum_index_newPostHide(style='margin-left: 5px;')
+			i.fa.fa-lightbulb-o
+			a#forum_index_gosignup.clickable(style='margin-left: 3px;') 前去报名！
+	div#forum_index_navigation.forum_index_newPostHide(style='margin-top:10px; margin-bottom:10px')
+		i.fa.fa-paper-plane(style='margin-right:5px;')
+	div#forum_index_newPostSummernote_container.forum_index_newPostShow
+		select#forum_index_newPostLabel.form-control(style='margin-top:5px; margin-bottom:5px;')
+		div
+			input#forum_index_newPostTitle.form-control(type='text' style='margin-top:5px; margin-bottom:5px;' placeholder='标题' validate='valuedString')
+		input#forum_index_newVoteDesc.form-control.forum_index_voteOnly(type='text' style='margin-top:5px; margin-bottom:5px;' placeholder='一小段话')
+		select#forum_index_newVoteMulti.forum_index_voteOnly.form-control
+			option(value='single') 单选
+			option(value='multi') 多选
+		div.forum_index_voteOnly
+			input#forum_index_newVoteOptionsInput.form-control(type='text' style='margin-top:5px; margin-bottom:5px;' placeholder='选项（以；分隔）')
+		div#forum_index_newVoteOptions.forum_index_voteOnly(style='margin-top:10px;')
+		div.forum_index_articleOnly
+			div#forum_index_newPostSummernote
+	div#forum_index_list.forum_index_newPostHide
+	div#forum_index_pagination.forum_index_newPostHide
+	div#md_disactivatePost.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+					h5#md_disactivatePost_title.modal-title 警告：删除帖子！
+				div.modal-body
+					strong#md_disactivatePost_body 是否删除帖子？
+				div.modal-footer
+					button#md_disactivatePost_btnDo.btn.btn-danger(data-dismiss='modal') 删除
+					button#md_disactivatePost_btnCancel.btn.btn-success(data-dismiss='modal') 取消
+script(src='/content/javascript/pagejs/forum/index/forum_index_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/forum/index/forum_index_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/forum/index/forum_index_pc.js?timestamp=#{timestamp}')

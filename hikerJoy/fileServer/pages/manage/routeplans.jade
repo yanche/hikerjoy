@@ -1,0 +1,156 @@
+﻿extends ../shared/_manageLayout
+
+block vars
+	- var title = '线路管理'
+
+block body
+	div(style='margin-bottom: 15px;')
+		button#btnAddActivity.btn.btn-success 添加
+	div#activityReviews
+	div#md_act.modal.fade(z-index='2' tabindex='-1' role='dialog' aria-labelledby='md_act_title' aria-hidden='true')
+		div.modal-dialog(style='max-width: 1000px; width: auto;')
+			div.modal-content
+				div.modal-header
+					button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+					h4#md_act_title.modal-title 组织活动
+				div.modal-body
+					ul.nav.nav-tabs
+						li.active
+							a(href='#md_act_basicInfo' data-toggle='tab') 基本信息
+						li
+							a(href='#md_act_recruitment' data-toggle='tab') 召集帖
+						li
+							a(href='#md_act_signUpSheet' data-toggle='tab') 报名表
+					div.tab-content(style='padding-top:15px;')
+						div#md_act_basicInfo.tab-pane.active
+							div.col-xs-12.col-sm-6
+								div.form-group.input-group
+									span.input-group-addon 活动名称
+									input#md_act_basicInfo_name.form-control
+							div.col-xs-12.col-sm-6
+								div.form-group.input-group
+									span.input-group-addon 状态
+									select#md_act_basicInfo_status.form-control
+										option(value='110') 筹备中
+										option(value='120') 接受报名
+										option(value='130') 进行中
+										option(value='140') 已结束
+							div.col-xs-12.col-sm-6
+								div.form-group.input-group
+									span.input-group-addon 开始日期
+									input#md_act_basicInfo_startsOn.form-control
+							div.col-xs-12.col-sm-6
+								div.form-group.input-group
+									span.input-group-addon 结束日期
+									input#md_act_basicInfo_endsOn.form-control
+							div#md_act_basicInfo_selectedLeaders
+							div.col-xs-12
+								div.form-group.input-group
+									span.input-group-addon 组织者
+									input#md_act_basicInfo_leaders.form-control(placeholder='活动领压队，将被授权查看名单，上传总结表和账单...')
+							div#md_act_basicInfo_selectedTags
+							div.col-xs-12
+								div.form-group.input-group
+									span.input-group-addon 标签
+									input#md_act_basicInfo_tags.form-control(placeholder='线路目的地分类，如清凉峰，七尖...')
+							div.col-xs-12(style='margin-bottom: 15px;')
+								textarea#md_act_basicInfo_intro.form-control(style='height: 100px;' placeholder='活动简介')
+							div.col-xs-12
+								span.btn.btn-default.fileinput-button
+									i.fa.fa-plus
+									span  活动图片（滚动图）
+									input#md_act_basicInfo_uploadPic(type='file')
+							div.col-xs-12
+								img#md_act_basicInfo_picReview.img-responsive.solidBorder
+							span &nbsp;
+						div#md_act_recruitment.tab-pane
+							div#md_act_recruitment_rpost.col-xs-12
+								div.summernote
+							span &nbsp;
+						div#md_act_signUpSheet.tab-pane
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label 姓名
+									div.col-sm-9
+										input.form-control(type='text')
+								div.form-group
+									label.col-sm-2.control-label 性别
+									div.col-sm-9
+										select.form-control
+											option 男
+											option 女
+								div.form-group
+									label.col-sm-2.control-label 邮箱
+									div.col-sm-9
+										input.form-control(type='text')
+								div#md_act_signUpSheet_lastBasicInfo.form-group
+									label.col-sm-2.control-label 手机
+									div.col-sm-9
+										input.form-control(type='text')
+							div#md_act_signUpSheet_addSignUpLineDiv.col-xs-12
+								div(style='border: 1px dashed green; border-radius: 5px; padding-top: 10px;')
+									div.col-xs-6
+										div.form-group.input-group
+											span.input-group-addon 标签
+											input#md_act_addSheetLine_label.form-control
+									div.col-xs-6
+										div.form-group.input-group
+											span.input-group-addon 类型
+											select#md_act_addSheetLine_type.form-control
+												option(value='text') 文本框
+												option(value='textarea') 富文本框
+												option.signUpSheetLineHasChildren(value='multi-select') 多选
+												option.signUpSheetLineHasChildren(value='select') 单选
+												option(value='image') 图片
+												option(value='date') 日期
+												option(value='weixin') 微信号（自动生成二维码）
+									div.col-xs-12
+										div.form-group.input-group
+											span.input-group-addon 内容(用;分割)
+											input#md_act_addSheetLine_children.form-control
+									div(style='margin-left:15px;')
+										div(style='display: inline-block; margin-bottom:15px; margin-right:15px;')
+											button#md_act_signUpSheet_newLine_reset.btn.btn-warning
+												i.fa.fa-trash-o
+												span  重置
+										div(style='display: inline-block; margin-bottom:15px; margin-right:15px;')
+											button#md_act_signUpSheet_newLine_add.btn.btn-success
+												i.fa.fa-plus
+												span  添加报名项
+							hr
+							div#md_act_signUpSheet_templates_div.col-xs-12
+								div(style='border: 1px dashed green; border-radius: 5px; padding-top: 10px; margin-top: 15px;')
+									div#md_act_signUpSheet_templates(style='margin-bottom: 15px; margin-top: 10px;')
+									div(style='margin-left:15px;')
+										div(style='display: inline-block; margin-bottom:15px; margin-right:15px;')
+											input#md_act_signUpSheet_newTemplate_name.form-control(style='width: 150px;')
+										div(style='display: inline-block; margin-bottom:15px; margin-right:15px;')
+											button#md_act_signUpSheet_replaceTemplate.btn.btn-success(disabled)
+												i.fa.fa-copy
+												span  替换模板
+										div(style='display: inline-block; margin-bottom:15px; margin-right:15px;')
+											button#md_act_signUpSheet_addTemplate.btn.btn-success
+												i.fa.fa-plus
+												span  添加模板
+							span &nbsp;
+				div.modal-footer
+					button#md_act_submit.btn.btn-success.pull-right 提交
+					button#md_act_save.btn.btn-default.pull-right(style='margin-right: 15px') 暂存
+
+	div#md_archiveRemoveActivity.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+					h5#md_archiveRemoveActivity_title.modal-title
+				div.modal-body
+					strong#md_archiveRemoveActivity_body
+				div.modal-footer
+					button#md_archiveRemoveActivity_btnDo.btn.btn-danger(data-dismiss='modal')
+					button#md_archiveRemoveActivity_btnCancel.btn.btn-success(data-dismiss='modal') 取消
+	link(rel='stylesheet' href='/content/css/pagecss/manage_routeplans.css?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/manage/routeplans/manage_routeplans_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/manage/routeplans/manage_routeplans_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/manage/routeplans/manage_routeplans_pc.js?timestamp=#{timestamp}')

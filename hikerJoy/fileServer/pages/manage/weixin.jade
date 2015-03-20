@@ -1,0 +1,77 @@
+﻿extends ../shared/_manageLayout
+
+block vars
+	- var title = '微信'
+
+block body
+	div.row(style='position:relative;')
+		div#view_weixinDetails.col-xs-12.paddingLR0px(style='position:absolute; top:0px; left:0px;')
+			div.col-xs-12
+				form.form-horizontal
+					div.form-group
+						label.col-xs-12.col-sm-2.control-label 微信公众号
+						div.col-xs-12.col-sm-6
+							input#weixin_weixinid.form-control
+						div#msg_submit_weixinId.col-xs-12.col-sm-4
+					div.form-group
+						label.col-xs-12.col-sm-2.control-label 同步活动
+						div.col-xs-12.col-sm-6
+							input#input_keyword_activities.form-control(placeholder='当在订阅号中输入此关键词，将会返回当前可以接受报名的活动')
+						div#msg_submit_keyword_activities.col-xs-12.col-sm-4
+					div.form-group
+						label.col-xs-12.col-sm-2.control-label 同步介绍
+						div.col-xs-12.col-sm-6
+							input#input_keyword_intro.form-control(placeholder='当在订阅号中输入此关键词，将会返回社团介绍')
+						div#msg_submit_keyword_intro.col-xs-12.col-sm-4
+			div#weixin_list.col-xs-12.marginT15px
+			div.col-xs-12
+				button#weixin_btnAddLine.btn.btn-success(style='margin-bottom: 15px;') 添加
+			i#btn_weixinConfigIntro_show.pointerCursor.fa.fa-2.fa-lightbulb-o.hoverYellowgreen(style='position:absolute; top:0px; right:3px;')
+		div#view_weixinConfigIntro.col-xs-12.paddingLR0px.htmlPostView.fontBold(style='position:absolute; top:0px; left:0px; display:none;')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 1.
+					span 首先，请先登录
+						a.clickable(href='https://mp.weixin.qq.com/' target='_blank') 微信公众号平台
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/1.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 2.
+					span 在左侧导航栏的最底部，进入开发者中心
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/2.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 3.
+					span 点击修改配置，填写服务器URL：http://www.hikerjoy.com/weixin 和Token：随意
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/3.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 4.
+					span 提交成功之后，点击'启用'
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/4.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 5.
+					span 点击右上角的头像，进入公众号信息页面
+				img.padding5px.dashedRadius5pxBorder.dashedRadius5pxBorder(src='/content/image/weixinIntro/5.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 6.
+					span 获得原始ID
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/6.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 7.
+					span 将它填写在这里
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/7.jpg')
+			div.col-xs-12.col-sm-6.padding15px
+				div
+					span(style='color:orange; margin-right:5px;') 8.
+					span 设置你想要的欢迎消息与默认回复，然后在微信中向公众号发送一条信息试试吧！
+				img.padding5px.dashedRadius5pxBorder(src='/content/image/weixinIntro/8.jpg')
+			i#btn_weixinDetails_show.pointerCursor.fa.fa-2.fa-cog.hoverYellowgreen(style='position:absolute; top:0px; right:3px;')
+	script(src='/content/javascript/pagejs/manage/weixin/manage_weixin_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/manage/weixin/manage_weixin_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/manage/weixin/manage_weixin_pc.js?timestamp=#{timestamp}')

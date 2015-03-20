@@ -1,0 +1,62 @@
+﻿a#a_account.ctrl_authShow(data-toggle='modal' data-target='#md_account')
+	i.fa.fa-user
+	span  账户
+
+div#md_account.modal.fade(tabindex='-1' role='dialog' aria-labelledby='md_account_title' aria-hidden='true')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h4#md_account_title.modal-title 账户
+			div.modal-body
+				ul.nav.nav-tabs
+					li.active
+						a(href='#md_account_basicInfo' data-toggle='tab') 个人信息
+					li
+						a(href='#md_account_changePwd' data-toggle='tab') 修改密码
+					li
+						a(href='#md_account_changeEmail' data-toggle='tab') 修改登录邮箱
+				div.tab-content(style='padding-top:15px;')
+					div#md_account_basicInfo.tab-pane.active
+						div.form-group
+							input#md_account_basicInfo_name.form-control.clearData(type='text' placeholder='姓名，选填' validate='nameNullable')
+						div.form-group.input-group
+							input#md_account_basicInfo_nickName.form-control.clearData(type='text' placeholder='昵称，选填' validate='nickNameNullable')
+							span.input-group-addon
+								span#md_account_nickNameAvailableHint.fa(style='width:15px;')
+						div.form-group
+							select#md_account_basicInfo_gender.form-control
+								option(value='男') 男
+								option(value='女') 女
+						div.form-group
+							input#md_account_basicInfo_email.form-control.clearData(type='text' placeholder='联系邮箱，用于接收活动报名通知等，建议与登录邮箱分开' validate='email')
+						div.form-group
+							input#md_account_basicInfo_phone.form-control.clearData(type='text' placeholder='手机，选填' validate='phoneNullable')
+						button#md_account_basicInfo_btnUpdatePersonalInfo.btn.btn-primary 更新个人信息
+					div#md_account_changePwd.tab-pane
+						div.form-group
+							input#md_account_changePwd_originPwd.form-control.clearData(type='password' placeholder='初始密码' validate='nonEmptyText')
+						div.form-group
+							input#md_account_changePwd_newPwd.form-control.clearData(type='password' placeholder='新密码' validate='password' data-placement='left' data-container='body' data-toggle='tooltip' data-title='密码长度至少为6位')
+						div.form-group
+							input#md_account_changePwd_newPwd2.form-control.clearData(type='password' validate='sameValue' data-validatetarget='#md_account_changePwd_newPwd' placeholder='再输入一次')
+						button#md_account_changePwd_btnChangePwd.btn.btn-primary 修改密码
+					div#md_account_changeEmail.tab-pane
+						div(style='margin-bottom:15px;')
+							strong 当前登录邮箱：
+							strong#md_account_changeEmail_current
+						div.form-group.input-group
+							input#md_account_changeEmail_newEmail.form-control.clearData(type='text' placeholder='新登录邮箱' validate='email')
+							span.input-group-addon
+								span#md_account_changeEmail_availableHint.fa(style='width:15px;')
+						div.form-group
+							input#md_account_changeEmail_newEmail2.form-control.clearData(type='text' validate='sameValue' data-validatetarget='#md_account_changeEmail_newEmail' placeholder='再输入一次')
+						div.form-group
+							input#md_account_changeEmail_pwd.form-control.clearData(type='password' validate='nonEmptyText' placeholder='请确认密码')
+						button#md_account_changeEmail_btnChangeEmail.btn.btn-primary 修改登录邮箱
+
+script(src='/content/javascript/pagejs/share/account/share_account_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/account/share_account_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/account/share_account_pc.js?timestamp=#{timestamp}')

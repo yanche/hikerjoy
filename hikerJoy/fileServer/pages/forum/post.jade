@@ -1,0 +1,28 @@
+﻿
+div#forum_post_main.row
+	div#forum_post_prmList.col-xs-12.col-md-8.col-md-offset-2
+	div#forum_post_pagination.col-xs-12.col-md-8.col-md-offset-2
+	div#forum_post_newPostPrmArea.col-xs-12.col-md-8.col-md-offset-2(style='margin-top:15px;')
+		div#forum_post_summernote
+		button#forum_post_resetPrm.btn.btn-warning(style='margin-left:15px; margin-top:5px;') 重置
+		button#forum_post_submitPrm.btn.btn-success(style='margin-left:15px; margin-top:5px;') 跟帖
+	div#forum_post_editPostPrmArea.col-xs-12.col-md-8.col-md-offset-2(style='margin-top:15px;')
+		div#forum_post_summernoteEditPostPrm
+		button#forum_post_cancelEditPostPrm.btn.btn-danger(style='margin-left:15px; margin-top:5px;') 取消
+		button#forum_post_submitEditPostPrm.btn.btn-success(style='margin-left:15px; margin-top:5px;') 编辑
+	div#md_disactivatePostPrmSec.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+					h5#md_disactivatePostPrmSec_title.modal-title 警告：删除跟帖/回复！
+				div.modal-body
+					strong#md_disactivatePostPrmSec_body 是否删除跟帖/回复？
+				div.modal-footer
+					button#md_disactivatePostPrmSec_btnDo.btn.btn-danger(data-dismiss='modal') 删除
+					button#md_disactivatePostPrmSec_btnCancel.btn.btn-success(data-dismiss='modal') 取消
+script(src='/content/javascript/pagejs/forum/post/forum_post_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/forum/post/forum_post_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/forum/post/forum_post_pc.js?timestamp=#{timestamp}')

@@ -1,0 +1,17 @@
+﻿extends ../shared/_libraryLayout
+
+block vars
+	- var title = '活动总结'
+
+block body
+	div.row
+		div.col-sm-6.col-sm-offset-3(style='margin-bottom:15px;')
+			input#summary_tagSearch.form-control(type='text')
+		div#summary_tagsArea.col-xs-12.col-sm-10.col-sm-offset-1
+		div#summary_summaryArea.col-xs-12.col-sm-10.col-sm-offset-1
+		div#summary_getmore.col-xs-12.col-sm-8.col-sm-offset-2.btn.pointerCursor.hoverBgGreen(style='padding:10px; border: dashed 1px black; border-radius: 5px; text-align:center;') 更多总结...
+	script(src='/content/javascript/pagejs/library/summary/library_summary_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/library/summary/library_summary_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/library/summary/library_summary_pc.js?timestamp=#{timestamp}')

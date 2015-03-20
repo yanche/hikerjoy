@@ -1,0 +1,12 @@
+﻿extends ../shared/_homeLayout
+
+block vars
+	- var title = '活动线路'
+
+block body
+	div#orgActs_view.row
+	script(src='/content/javascript/pagejs/home/routeplans/home_routeplans_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/home/routeplans/home_routeplans_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/home/routeplans/home_routeplans_pc.js?timestamp=#{timestamp}')

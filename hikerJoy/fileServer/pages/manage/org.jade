@@ -1,0 +1,85 @@
+﻿extends ../shared/_manageLayout
+
+block vars
+	- var title = '组织管理'
+
+block body
+	div
+		ul.nav.nav-tabs
+			li.active
+				a(href='#org_intro' data-toggle='tab') 组织介绍
+			li
+				a(href='#org_users' data-toggle='tab') 管理员权限
+			li
+				a(href='#org_picture' data-toggle='tab') 横幅Logo
+		div.tab-content(style='padding-top:15px;')
+			div#org_intro.tab-pane.active
+				form.form-horizontal
+					div.form-group
+						label.col-sm-2.control-label 简短介绍
+						div.col-sm-9
+							input#org_intro_shortIntro.form-control
+					div.form-group
+						label.col-sm-2.control-label 详细介绍
+						div.col-sm-9
+							div#org_intro_summernote
+				button#org_intro_submit.btn.btn-success(style='margin-top: 15px;') 保存
+				script(src='/content/javascript/pagejs/manage/org/intro/manage_org_intro_common.js?timestamp=#{timestamp}')
+				- if(isMobile)
+					script(src='/content/javascript/pagejs/manage/org/intro/manage_org_intro_mobile.js?timestamp=#{timestamp}')
+				- else
+					script(src='/content/javascript/pagejs/manage/org/intro/manage_org_intro_pc.js?timestamp=#{timestamp}')
+			div#org_users.tab-pane
+				div.col-xs-12.col-md-8.col-md-offset-2
+					div#org_users_orgAdminView.col-xs-12
+					div.col-xs-12.col-sm-6(style='margin-bottom: 15px;')
+						input#org_users_newAdmin.form-control(type='text' placeholder='请使用联系邮箱，或者人名进行搜索')
+					div.col-xs-12.col-sm-6
+						button#org_users_addNewAdminBtn.btn.btn-success
+							i.fa.fa-plus  添加
+				div#org_md_removeOrgAdmin.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+					div.modal-dialog
+						div.modal-content
+							div.modal-header
+								button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+								h5.modal-title 警告：移除组织管理员
+							div.modal-body
+								strong 是否移除组织管理员？被移除的用户将无法继续行使组织的相关权限，如误操作请重新进行授权。
+							div.modal-footer
+								button.btn.btn-danger(data-dismiss='modal') 移除
+								button.btn.btn-success(data-dismiss='modal') 取消
+				script(src='/content/javascript/pagejs/manage/org/users/manage_org_users_common.js?timestamp=#{timestamp}')
+				- if(isMobile)
+					script(src='/content/javascript/pagejs/manage/org/users/manage_org_users_mobile.js?timestamp=#{timestamp}')
+				- else
+					script(src='/content/javascript/pagejs/manage/org/users/manage_org_users_pc.js?timestamp=#{timestamp}')
+			div#org_picture.tab-pane
+				h3
+					strong 站点横幅
+					div
+						img#org_picture_orgBanner_review.img-responsive.solidBorder(data-type='banner' style='margin-top:15px;margin-bottom:15px;')
+						span.btn.btn-default.fileinput-button
+							i.fa.fa-plus
+							span  本地加载
+							input#org_picture_orgBanner_upload(type='file' name='fileToUpload' data-type='banner' data-reviewer='#org_picture_orgBanner_review')
+						button#org_picture_orgBanner_submit.btn.btn-success(data-type='banner' style='margin-left: 15px;') 上传横幅
+				hr
+				h3
+					strong Logo
+					div
+						img#org_picture_orgLogo_review.img-responsive.solidBorder(data-type='logo' style='margin-top:15px;margin-bottom:15px;')
+						span.btn.btn-default.fileinput-button
+							i.fa.fa-plus
+							span  本地加载
+							input#org_picture_orgLogo_upload(type='file' name='fileToUpload' data-type='logo' data-reviewer='#org_picture_orgLogo_review')
+						button#org_picture_orgLogo_submit.btn.btn-success(data-type='logo' style='margin-left: 15px;') 上传Logo
+				script(src='/content/javascript/pagejs/manage/org/picture/manage_org_picture_common.js?timestamp=#{timestamp}')
+				- if(isMobile)
+					script(src='/content/javascript/pagejs/manage/org/picture/manage_org_picture_mobile.js?timestamp=#{timestamp}')
+				- else
+					script(src='/content/javascript/pagejs/manage/org/picture/manage_org_picture_pc.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/manage/org/manage_org_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/manage/org/manage_org_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/manage/org/manage_org_pc.js?timestamp=#{timestamp}')

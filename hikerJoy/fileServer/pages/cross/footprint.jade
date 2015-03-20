@@ -1,0 +1,6 @@
+﻿div#footprint_main.row
+script(src='/content/javascript/pagejs/cross/footprint/cross_footprint_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/cross/footprint/cross_footprint_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/cross/footprint/cross_footprint_pc.js?timestamp=#{timestamp}')

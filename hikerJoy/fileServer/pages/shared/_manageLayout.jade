@@ -1,0 +1,56 @@
+﻿doctype html
+
+block vars
+
+html(lang='zh-CN' token='#{token}')
+	head
+		meta(name='keywords' content='hiker,hikerjoy')
+		meta(http-equiv='charset' content='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		title #{title}
+		link(rel='shortcut icon' href='/content/image/icon.jpg?timestamp=#{timestamp}' type='image/x-icon')
+		link(rel='icon' href='/content/image/icon.jpg?timestamp=#{timestamp}' type='image/ico')
+
+		link(rel='stylesheet' href='/content/css/bootstrap.3.0.3.min.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/font-awesome.min.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/jquery-ui-1.10.4.custom.min.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/basic.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/Site.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/summernote.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/datepicker.css?timestamp=#{timestamp}')
+		link(rel='stylesheet' href='/content/css/bootstrap-tab-position.css?timestamp=#{timestamp}')
+		
+		script(src='/content/javascript/lib/public/WeixinApi.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/jquery-1.11.1.min.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/jquery.cookie.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/jquery-ui-1.10.4.autocomplete.min.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/bootstrap.3.0.3.min.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/jquery.hotkeys.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/summernote.min.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/summernote-zh-CN.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/ajaxfileupload.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/jquery-unified-export-file-1.0.min.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/bootstrap-datepicker.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/bootstrap-datepicker.zh-CN.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/md5-min.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/q.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/jsbn.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/png.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/public/rsa.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_ext.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_validate.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_htmlpost.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_webstorage.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_context.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_crypto.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_feedback.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_cache.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_image.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/manage/manage_nav.js?timestamp=#{timestamp}')
+	body
+		div.container
+			include _banner
+			include _manage_nav
+			block body
+			include _alert

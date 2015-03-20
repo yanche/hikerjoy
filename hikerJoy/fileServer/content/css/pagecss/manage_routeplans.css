@@ -1,0 +1,27 @@
+﻿#activityReviews a:nth-child(2n+1) {
+    clear: left;
+}
+
+@media (min-width: 768px) {
+    #activityReviews a:nth-child(2n+1) {
+        clear: none;
+    }
+
+    #activityReviews a:nth-child(3n+1) {
+        clear: left;
+    }
+}
+
+@media (min-width: 992px) {
+    #activityReviews a:nth-child(2n+1) {
+        clear: none;
+    }
+
+    #activityReviews a:nth-child(3n+1) {
+        clear: none;
+    }
+
+    #activityReviews a:nth-child(4n+1) {
+        clear: left;
+    }
+}

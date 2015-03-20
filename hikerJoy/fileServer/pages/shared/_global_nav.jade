@@ -1,0 +1,67 @@
+﻿- if(!isMobile)
+	nav.navbar.navbar-default.row
+		div.navbar-header
+			button.navbar-toggle(data-toggle='collapse' data-target='#portalNavBar')
+				span.sr-only
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='/global/index') 社团组织
+		div#portalNavBar.collapse.navbar-collapse
+			ul.nav.navbar-nav
+				li
+					a(href='/global/activities') 当前活动
+				li
+					a.hide(href='/library/index') 资料库
+				li
+					a(href='/forum/index') 话题
+				li#global_nav_leadership
+					a.ctrl_authShow(href='/global/leadership') 我的队伍
+				li#global_nav_footprint
+					a.ctrl_authShow(href='/global/footprint') 足迹
+			ul.nav.navbar-nav.navbar-right
+				li
+					include _messages
+				li
+					include _account
+				li
+					include _logout
+				li
+					include _login
+				li
+					include _register
+				li
+					include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_pc.js?timestamp=#{timestamp}')
+- else
+	div._mobile_nav_sidebar_left
+		ul.nav
+			li#global_nav_index_mobile
+				a(href='/global/index') 社团组织
+			li#global_nav_activities_mobile
+				a(href='/global/activities') 当前活动
+			li
+				a.hide(href='/library/index') 资料库
+			li#forum_nav_index_mobile
+				a(href='/forum/index') 话题
+			li#global_nav_leadership_mobile
+				a.ctrl_authShow(href='/global/leadership') 我的队伍
+			li#global_nav_footprint_mobile
+				a.ctrl_authShow(href='/global/footprint') 足迹
+	div._mobile_nav_sidebar_right
+		ul.nav
+			li
+				include _messages
+			li
+				include _account
+			li
+				include _logout
+			li
+				include _login
+			li
+				include _register
+			li
+				include _contact
+	script(src='/content/javascript/pagejs/share/nav/share_nav_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/share/nav/share_nav_mobile.js?timestamp=#{timestamp}')

@@ -1,0 +1,8 @@
+﻿a#a_logout.ctrl_authShow
+	i.fa.fa-sign-out
+	span  注销
+script(src='/content/javascript/pagejs/share/logout/share_logout_common.js?timestamp=#{timestamp}')
+- if(isMobile)
+	script(src='/content/javascript/pagejs/share/logout/share_logout_mobile.js?timestamp=#{timestamp}')
+- else
+	script(src='/content/javascript/pagejs/share/logout/share_logout_pc.js?timestamp=#{timestamp}')

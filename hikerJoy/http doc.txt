@@ -1,0 +1,15 @@
+
+req
+.url
+.headers
+---
+.cookies
+.session
+.route(file server)
+.body(data server)
+.action(data server)
+
+res
+.content
+.contentType
+.lastModified(file server)

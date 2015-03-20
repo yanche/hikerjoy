@@ -1,0 +1,34 @@
+﻿div#leadership_main.row
+	div#leadership_activitySelection.col-xs-12.col-sm-6.col-sm-offset-3
+	script(src='/content/javascript/lib/public/FileSaver.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/lib/public/Chart.min.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/lib/hikerJoy/hikerJoy_lib_feedback.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/cross/leadership/cross_leadership_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/cross/leadership/members/cross_leadership_members_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/cross/leadership/summary/cross_leadership_summary_common.js?timestamp=#{timestamp}')
+	script(src='/content/javascript/pagejs/cross/leadership/billstatement/cross_leadership_billstatement_common.js?timestamp=#{timestamp}')
+	- if(isMobile)
+		script(src='/content/javascript/pagejs/cross/leadership/cross_leadership_mobile.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/cross/leadership/members/cross_leadership_members_mobile.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/cross/leadership/summary/cross_leadership_summary_mobile.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/cross/leadership/billstatement/cross_leadership_billstatement_mobile.js?timestamp=#{timestamp}')
+	- else
+		script(src='/content/javascript/pagejs/cross/leadership/cross_leadership_pc.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/cross/leadership/members/cross_leadership_members_pc.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/cross/leadership/summary/cross_leadership_summary_pc.js?timestamp=#{timestamp}')
+		script(src='/content/javascript/pagejs/cross/leadership/billstatement/cross_leadership_billstatement_pc.js?timestamp=#{timestamp}')
+div#leadership_md_sendMessage.modal.fade(tabindex='-1' role='dialog' aria-labelledby='leadership_md_sendMessage_title' aria-hidden='true')
+	div.modal-dialog
+		div.modal-content
+			div.modal-header
+				button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+				h4#leadership_md_sendMessage_title.modal-title 发送邮件
+			div.modal-body
+				text 发送给：
+				div#leadership_md_sendMessage_receivers
+				div
+					input#leadership_md_sendMessage_subject.form-control(type='text' placeholder='标题' validate='valuedString')
+				div
+					textarea#leadership_md_sendMessage_body.form-control(placeholder='正文' validate='valuedString' style='height: 120px; margin-top: 15px;')
+			div.modal-footer
+				button#leadership_md_sendMessage_send.btn.btn-success(style='margin: 15px 15px 15px 15px;') 发送信息

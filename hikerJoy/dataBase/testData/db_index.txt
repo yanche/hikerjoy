@@ -1,0 +1,7 @@
+﻿
+db.users.ensureIndex({'email':1}, {'unique':true});
+db.organizations.ensureIndex({'alias':1}, {'unique':true});
+db.userActs.ensureIndex({'userId':1});
+db.activityTags.ensureIndex({'name':1});
+db.sessions.ensureIndex({'sessionId':1}, {'unique':true});
+
