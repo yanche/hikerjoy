@@ -1,0 +1,16 @@
+/hikerJoy/node_modules/*
+!/hikerJoy/node_modules/hikerJoy
+!/hikerJoy/node_modules/hikerJoy_authClient
+!/hikerJoy/node_modules/hikerJoy_authServer
+!/hikerJoy/node_modules/hikerJoy_dataBase
+!/hikerJoy/node_modules/hikerJoy_dataServer
+!/hikerJoy/node_modules/hikerJoy_fileServer
+!/hikerJoy/node_modules/hikerJoy_logClient
+!/hikerJoy/node_modules/hikerJoy_rsa
+!/hikerJoy/node_modules/hikerJoy_weixinServer
+!/hikerJoy/node_modules/utility
+/hikerJoy/fileServer/content/image/*.jpeg
+/hikerJoy/fileServer/content/image/*.jpg
+/hikerJoy/fileServer/content/image/*.png
+/hikerJoy/fileServer/content/image/*.bmp
+
