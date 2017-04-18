@@ -66,17 +66,19 @@ var retrieveAndResizeOneImage = function (file, maxH, maxW, onLoad) {
         if (maxH && maxW) {
             img = document.createElement('img');
             img.src = e.target.result;
-            var h = img.height, w = img.width;
-            var expected_h = w * maxH / maxW;
-            expected_h = expected_h >= maxH ? maxH : expected_h;
-            var to_h = expected_h <= h ? expected_h : h;
-            var to_w = to_h * maxW / maxH;
-            var canvas = document.createElement('canvas');
-            canvas.width = to_w;
-            canvas.height = to_h;
-            var cvs = canvas.getContext('2d');
-            cvs.drawImage(img, 0, 0, to_w, to_h);
-            onLoad(canvas.toDataURL('image/jpeg'));
+            img.onload = function () {
+                var h = img.height, w = img.width;
+                var expected_h = w * maxH / maxW;
+                expected_h = expected_h >= maxH ? maxH : expected_h;
+                var to_h = expected_h <= h ? expected_h : h;
+                var to_w = to_h * maxW / maxH;
+                var canvas = document.createElement('canvas');
+                canvas.width = to_w;
+                canvas.height = to_h;
+                var cvs = canvas.getContext('2d');
+                cvs.drawImage(img, 0, 0, to_w, to_h);
+                onLoad(canvas.toDataURL('image/jpeg'));
+            };
         }
         else {
             onLoad(e.target.result);
